@@ -1,0 +1,68 @@
+{
+  "globals": {
+    "React": true,
+    "JSX": true
+  },
+  "extends": [
+    "plugin:prettier/recommended",
+    "next/core-web-vitals",
+    "airbnb-base",
+    "prettier"
+  ],
+  "plugins": [
+    "eslint-plugin-import-helpers",
+    "@typescript-eslint",
+    "prettier",
+    "react"
+  ],
+  "rules": {
+    "@next/next/no-server-import-in-page": "off",
+    "no-console": "off",
+    "no-shadow": "off",
+    "camelcase": "off",
+    "@typescript-eslint/no-shadow": [
+      "error"
+    ],
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "import/no-unresolved": "error",
+    "no-underscore-dangle": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react$/",
+          "/^next$/",
+          "module",
+          "/^~/./",
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "_"
+      }
+    ]
+  }
+}
